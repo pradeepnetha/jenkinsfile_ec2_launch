@@ -26,7 +26,6 @@ pipeline {
            sh '''
                 chmod +x pradeepec2launch.sh
                 ./pradeepec2launch.sh $img_id $instance_type $sub_id $region_name $sg_name $key_name
-                export $InstanceId
            '''
                println "${ InstanceId }"
                
