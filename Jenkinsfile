@@ -1,5 +1,5 @@
 pipeline {
-    agent anychoice (choices: ['asg-new'] name: 'key_name')
+    agent any
         parameters {
         //string (description: 'enter ami_id', name: 'img_id')
         //string (description: 'enter Instance Type', name: 'instance_type')
