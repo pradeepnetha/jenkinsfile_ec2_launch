@@ -28,12 +28,17 @@ pipeline {
                 chmod +x pradeepec2launch.sh
                 ./pradeepec2launch.sh $img_id $instance_type $sub_id $region_name $sg_name $key_name
           '''
-          sh 'aws ec2 describe-instances --filters "Name=tag:Name,Values=Web3" --region us-east-2 > instance'
+          sh """
+          aws ec2 describe-instances --filters "Name=tag:Name,Values=Web3" --region us-east-2 > instance
+          grep InstanceId instance > instance1
+          var=$( cat instance1 )
+          """
           //sh ' grep InstanceId instance > instance1 '
-          sh([script: 'grep InstanceId instance > instance1'])
-          sh([script: 'var=$( cat instance1 )'])
+          //sh([script: 'grep InstanceId instance > instance1'])
+          //sh([script: 'var=$( cat instance1 )'])
                
            //sh "echo $var"
+               echo "$var"
                echo 'hai from pradeep'
                                 
               
