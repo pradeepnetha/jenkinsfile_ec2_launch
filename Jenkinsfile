@@ -6,7 +6,7 @@ pipeline {
         string (description: 'enter subnet id', name: 'subnetid')
         string (description: 'enter region name', name: 'region_name')
         string (description: 'enter Security Group', name: 'sgname')
-        choice (choices: ['asg-new','CI_VPC', 'test1'], description: 'choose key pair?', name: 'keypair_name')
+        choice (choices: ['asg-new','CI_VPC', 'test1'], description: 'choose key pair?', name: 'key_name')
     }
     
     stages {
