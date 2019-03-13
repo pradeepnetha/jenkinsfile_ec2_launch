@@ -33,7 +33,7 @@ pipeline {
                 //sh([script: 'grep InstanceId instance > instance1'])
                
                echo 'hai from pradeep'
-               echo ${ img_id }
+               echo ${img_id}
                
                
                // Show the select input modal
