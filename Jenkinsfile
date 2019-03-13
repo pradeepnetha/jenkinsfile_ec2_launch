@@ -34,7 +34,18 @@ pipeline {
                 sh([script: 'var=$( cat instance1 )'])
                
                echo 'hai from pradeep'
-               echo ${var}
+         
+           script{
+                    /*extract load generator instanceId*/
+                    instanceInfo = sh (
+                            script: "aws ec2 describe-instances --filters "Name=tag:Name,Values=Web3" --region us-east-2"
+                            returnStdout: true
+                    ).trim()
+                    instanceJSON = readJSON text: instanceInfo
+                    instanceJSON.each { instance ->
+                        echo "${instance.id[0]}: ${instance.instanceState[0]}"
+                    }     
+               
                //echo "${InstanceId}"
                
                
