@@ -6,11 +6,11 @@ pipeline {
         //string (description: 'enter subnet id', name: 'sub_id')
         //string (description: 'enter region name', name: 'region_name')
         //string (description: 'enter Security Group', name: 'sg_name')
-        choice (choices: ['img_id'], description: 'choose key pair?', name: 'key_name')
-        choice (choices: ['instance_type'], name: 'key_name')
-        choice (choices: ['sub_id'], name: 'key_name')
-        choice (choices: ['region_name'], name: 'key_name')
-        choice (choices: ['sg_name'], name: 'key_name')    
+        choice (choices: ['ami-0b500ef59d8335eee'], description: 'choose key pair?', name: 'img_id')
+        choice (choices: ['t2.micro'], name: 'instance_type')
+        choice (choices: ['subnet-0e7e366cb34aca9b2'], name: 'sub_id')
+        choice (choices: ['us-east-2'], name: 'region_name')
+        choice (choices: ['sg-04a6d324940433647'], name: 'sg_name')    
         choice (choices: ['asg-new','CI_VPC', 'test1'], description: 'choose key pair?', name: 'key_name')
     }
     
