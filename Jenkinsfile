@@ -35,7 +35,7 @@ pipeline {
                
            //sh "echo $var"
                echo 'hai from pradeep'
-         def proc = ['sh([script: 'grep InstanceId instance > instance1'])'].execute()
+         def proc = [sh([script: 'grep InstanceId instance > instance1'])].execute()
          println proc.getText()
          println proc.exitValue() != 0
                                   
