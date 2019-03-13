@@ -28,7 +28,7 @@ pipeline {
                 ./pradeepec2launch.sh $img_id $instance_type $sub_id $region_name $sg_name $key_name
                 export $InstanceId
            '''
-               print ${ InstanceId }
+               println ${ InstanceId }
                
                
                // Show the select input modal
