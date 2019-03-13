@@ -32,9 +32,9 @@ pipeline {
               // sh ' grep InstanceId instance > instance1 '
                 sh([script: 'grep InstanceId instance > instance1'])
                 sh([script: 'var=$( cat instance1 )'])
-               def var
+               
                echo 'hai from pradeep'
-               echo "${var}"
+               echo ${var}
                //echo "${InstanceId}"
                
                
