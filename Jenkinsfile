@@ -29,11 +29,11 @@ pipeline {
                 ./pradeepec2launch.sh $img_id $instance_type $sub_id $region_name $sg_name $key_name
           '''
           sh 'aws ec2 describe-instances --filters "Name=tag:Name,Values=Web3" --region us-east-2 > instance'
-               //sh ' grep InstanceId instance > instance1 '
-                //sh([script: 'grep InstanceId instance > instance1'])
+              // sh ' grep InstanceId instance > instance1 '
+                sh([script: 'grep InstanceId instance > instance1'])
                
                echo 'hai from pradeep'
-               echo "${InstanceId}"
+               //echo "${InstanceId}"
                
                
                // Show the select input modal
