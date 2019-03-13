@@ -35,13 +35,7 @@ pipeline {
                
                echo 'hai from pradeep'
          
-           
-                    instanceInfo = sh (
-                            script: "aws ec2 describe-instances --filters "Name=tag:Name,Values=Web3" --region us-east-2"
-                            returnStdout: true
-                    ).trim()
-               echo "${instanceInfo}"   
-                
+                                  
                
                //echo "${InstanceId}"
                
