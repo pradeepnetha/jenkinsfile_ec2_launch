@@ -34,6 +34,7 @@ pipeline {
                 sh([script: 'var=$( cat instance1 )'])
                
                echo 'hai from pradeep'
+               echo "${var}"
                //echo "${InstanceId}"
                
                
