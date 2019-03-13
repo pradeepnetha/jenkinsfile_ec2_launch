@@ -1,11 +1,16 @@
 pipeline {
-    agent any
-    parameters {
-        string (description: 'enter ami_id', name: 'img_id')
-        string (description: 'enter Instance Type', name: 'instance_type')
-        string (description: 'enter subnet id', name: 'sub_id')
-        string (description: 'enter region name', name: 'region_name')
-        string (description: 'enter Security Group', name: 'sg_name')
+    agent anychoice (choices: ['asg-new'] name: 'key_name')
+        parameters {
+        //string (description: 'enter ami_id', name: 'img_id')
+        //string (description: 'enter Instance Type', name: 'instance_type')
+        //string (description: 'enter subnet id', name: 'sub_id')
+        //string (description: 'enter region name', name: 'region_name')
+        //string (description: 'enter Security Group', name: 'sg_name')
+        choice (choices: ['img_id'] name: 'key_name')
+        choice (choices: ['instance_type'] name: 'key_name')
+        choice (choices: ['sub_id'] name: 'key_name')
+        choice (choices: ['region_name'] name: 'key_name')
+        choice (choices: ['sg_name'] name: 'key_name')    
         choice (choices: ['asg-new','CI_VPC', 'test1'], description: 'choose key pair?', name: 'key_name')
     }
     
