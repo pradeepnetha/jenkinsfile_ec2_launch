@@ -27,7 +27,7 @@ pipeline {
                 chmod +x pradeepec2launch.sh
                 ./pradeepec2launch.sh $img_id $instance_type $sub_id $region_name $sg_name $key_name
            '''
-               println "${ InstanceId }"
+               echo "${InstanceId}"
                
                
                // Show the select input modal
