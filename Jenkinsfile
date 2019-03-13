@@ -23,10 +23,10 @@ pipeline {
            credentialsId: 'aws key', 
            secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']])  {    
            git url: 'https://github.com/pradeepnetha/ec2launch.git'
-           sh '''
-                chmod +x pradeepec2launch.sh
-                ./pradeepec2launch.sh $img_id $instance_type $sub_id $region_name $sg_name $key_name
-           '''
+           //sh '''
+                //chmod +x pradeepec2launch.sh
+                pradeepec2launch.sh $img_id $instance_type $sub_id $region_name $sg_name $key_name
+          // '''
                echo 'hai from pradeep'
                echo '${InstanceId}'
                
