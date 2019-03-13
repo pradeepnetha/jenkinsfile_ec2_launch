@@ -29,7 +29,7 @@ pipeline {
                 ./pradeepec2launch.sh $img_id $instance_type $sub_id $region_name $sg_name $key_name
           '''
           sh '            aws ec2 describe-instances --filters "Name=tag:Name,Values=Web3" --region us-east-2 > instance'
-            sh 'instanceid=$( cat instance )'
+            sh 'instanceid=$( cat instance ) echo $instanceid'
                
                
                echo 'hai from pradeep'
