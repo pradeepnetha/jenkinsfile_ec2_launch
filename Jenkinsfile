@@ -30,7 +30,7 @@ pipeline {
           '''
           sh 'aws ec2 describe-instances --filters "Name=tag:Name,Values=Web3" --region us-east-2 > instance'
                sh ''' grep InstanceId instance | tr -d '",:'  > instance1 '''
-                sh 'insta=$( cat instance1 )            
+                sh 'insta=$( cat instance1 )'            
                
                
                echo 'hai from pradeep'
