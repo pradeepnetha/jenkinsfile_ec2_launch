@@ -46,7 +46,7 @@ pipeline {
                // Show the select input modal
                //echo "${ ami_id }"
                //echo "${key_name}"
-               
+               slackSend message: 'build is success', tokenCredentialId: 'slack-jenkins'
                          
             }
 //          withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws-access', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
@@ -60,7 +60,7 @@ pipeline {
             //echo "${my_id}"
             //}
             //echo "${my_id}"
-            slackSend message: 'build is success', tokenCredentialId: 'slack-jenkins'
+            
                        
         
            //}
