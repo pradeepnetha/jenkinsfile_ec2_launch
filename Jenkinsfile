@@ -37,7 +37,7 @@ pipeline {
                
            //sh "echo $var"
                //echo "$var"
-               echo "{ $img_id }"
+               echo "{ $Insta_Id }"
                                 
               
               //echo "${InstanceId}"
