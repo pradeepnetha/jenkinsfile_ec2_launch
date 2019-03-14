@@ -28,14 +28,25 @@ pipeline {
                 chmod +x pradeepec2launch.sh
                 ./pradeepec2launch.sh $img_id $instance_type $sub_id $region_name $sg_name $key_name
           '''
-          //sh 'aws ec2 describe-instances --filters "Name=tag:Name,Values=Web3" --region us-east-2 > instance'
-               aws ec2 describe-instances --filters "Name=tag:Name,Values=Web3" --region us-east-2
+          sh 'aws ec2 describe-instances --filters "Name=tag:Name,Values=Web3" --region us-east-2 > instance'
+               
           
           
           sh ' grep InstanceId instance > instance1 '
           sh([script: 'grep InstanceId instance > instance1'])
           sh([script: 'var=$( cat instance1 )'])
-               
+ //============================================================              
+               BUILD_FULL = sh (
+    script: "rep InstanceId information.txt | tr -d '", ":' > Instance_Id
+    sed -i 's/InstanceId//g' Instance_Id
+    Insta_Id=$( cat Instance_Id )
+    echo $Insta_Id",
+                   
+    //script: "git log -1 --pretty=%B | grep '\\[jenkins-full]'",
+    returnStatus: true
+) == 0
+echo "Build full flag: ${BUILD_FULL}"
+//  ====================================================             
            //sh "echo $var"
                //echo "$var"
               /// sh 'echo $var'
