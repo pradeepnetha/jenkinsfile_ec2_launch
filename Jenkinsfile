@@ -56,7 +56,7 @@ pipeline {
                 }
         }         
         
-        stage (' slack notification') {
+        stage ('slack notification') {
             steps {
              script {
    def my_id = ''
