@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    environment {
+        COMMITS_ON_MASTER = sh(script: "var=$( cat instance1 )", returnStdout: true).trim()
+    }
         parameters {
         //string (description: 'enter ami_id', name: 'img_id')
         //string (description: 'enter Instance Type', name: 'instance_type')
@@ -39,10 +42,10 @@ pipeline {
            //sh "echo $var"
                //echo "$var"
               /// sh 'echo $var'
-         def output = sh returnStdout: true, script: 'ls -l'
+         
               
               //echo "${InstanceId}"
-               
+            echo "There are ${env.COMMITS_ON_MASTER} commits on master"   
                
                // Show the select input modal
                //echo "${ ami_id }"
