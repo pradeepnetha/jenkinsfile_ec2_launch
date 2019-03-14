@@ -23,10 +23,14 @@ pipeline {
            steps {
                 script {
    def my_id = ''
-dir ('/var/lib/jenkins/workspace/hainew'){
-my_id = sh(script:"head -1 Instance_Id", returnStdout: true)
-echo "${my_id}"
-}
+        dir ('/var/lib/jenkins/workspace/hainew'){
+        my_id = sh(script:"head -1 Instance_Id", returnStdout: true)
+        echo "${my_id}"
+   def mykey_name == ''
+        dir ('/var/lib/jenkins/workspace/hainew'){
+        my_id = sh(script:"head -2 Instance_Id", returnStdout: true)
+            echo "${mykey_name}" 
+        }}
            withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', 
            accessKeyVariable: 'AWS_ACCESS_KEY_ID', 
            credentialsId: 'aws key', 
@@ -37,10 +41,7 @@ echo "${my_id}"
                 chmod +x pradeepec2launch.sh
                 ./pradeepec2launch.sh $img_id $instance_type $sub_id $region_name $sg_name $key_name $tag_name $tag_value $tag_instance
           '''
-          sh 'aws ec2 describe-instances --filters "Name=tag:Name,Values=Web3" --region us-east-2 > instance'
-               
-          
-          
+          sh 'aws ec2 describe-instances --filters "Name=tag:Name,Values=Web3" --region us-east-2 > instance'        
           sh ' grep InstanceId instance > instance1 '
           sh([script: 'grep InstanceId instance > instance1'])
           sh([script: 'var=$( cat instance1 )'])
@@ -56,7 +57,7 @@ echo "${my_id}"
                //echo "${ ami_id }"
                //echo "${key_name}"
                
-               slackSend message: 'build is success' +my_id, tokenCredentialId: 'slack-jenkins'
+               slackSend message: 'build is success' +my_id +mykey_name, tokenCredentialId: 'slack-jenkins'
             
             }
 //          withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws-access', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
