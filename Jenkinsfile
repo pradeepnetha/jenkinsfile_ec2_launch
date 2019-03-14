@@ -37,7 +37,7 @@ pipeline {
           sh([script: 'var=$( cat instance1 )'])
  //============================================================              
                BUILD_FULL = sh (
-    rep InstanceId information.txt | tr -d '", ":' > Instance_Id
+    grep InstanceId information.txt | tr -d '", ":' > Instance_Id
     sed -i 's/InstanceId//g' Instance_Id
     Insta_Id=$( cat Instance_Id )
     echo $Insta_Id,
