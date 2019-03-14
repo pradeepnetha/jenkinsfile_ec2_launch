@@ -26,11 +26,12 @@ pipeline {
         dir ('/var/lib/jenkins/workspace/hainew'){
         my_id = sh(script:"head -1 Instance_Id", returnStdout: true)
         echo "${my_id}"
+        }
    def mykey_name == ''
         dir ('/var/lib/jenkins/workspace/hainew'){
         my_id = sh(script:"head -2 Instance_Id", returnStdout: true)
             echo "${mykey_name}" 
-        }}
+        }
            withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', 
            accessKeyVariable: 'AWS_ACCESS_KEY_ID', 
            credentialsId: 'aws key', 
