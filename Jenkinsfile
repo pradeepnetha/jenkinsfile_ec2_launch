@@ -42,10 +42,7 @@ pipeline {
          
               
               //echo "${InstanceId}"
-         sh "echo foo > result";
-         def output=readFile('result').trim()
-         echo "output=$output";
-               
+                  
                // Show the select input modal
                //echo "${ ami_id }"
                //echo "${key_name}"
