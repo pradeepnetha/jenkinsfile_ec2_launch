@@ -36,7 +36,7 @@ pipeline {
           sh([script: 'var=$( cat instance1 )'])
                
            //sh "echo $var"
-               echo "$var"
+               //echo "$var"
                echo 'hai from pradeep'
                                 
               
