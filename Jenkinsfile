@@ -68,10 +68,9 @@ pipeline {
         dir ('/var/lib/jenkins/workspace/hainew'){
         my_name = sh(script:"head -2 Instance_Id", returnStdout: true)
         echo "${my_name}"
-        }
-                 
-          slackSend message: 'build is success' +my_id +my_name, tokenCredentialId: 'slack-jenkins'  
-            }
+        }           
+}
+                slackSend message: 'build is success' +my_id +my_name, tokenCredentialId: 'slack-jenkins'
         }
            }
        
