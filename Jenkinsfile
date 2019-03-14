@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        COMMITS_ON_MASTER = sh(script: "var=$( cat instance1 )", returnStdout: true).trim()
+        COMMITS_ON_MASTER = sh(script: 'var=$( cat instance1 )', returnStdout: true).trim()
     }
         parameters {
         //string (description: 'enter ami_id', name: 'img_id')
