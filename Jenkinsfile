@@ -63,7 +63,7 @@ pipeline {
             slackSend message: 'build is success', tokenCredentialId: 'slack-jenkins'
                        
         
-           }
+           //}
                
                 }
         }         
