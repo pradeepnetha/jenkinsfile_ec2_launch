@@ -49,26 +49,9 @@ pipeline {
                slackSend message: 'build is success', tokenCredentialId: 'slack-jenkins'
                          
             }
-//          withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws-access', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
-   // some block
-               
-    
-        //script {
-          //  def my_id = ''
-            //dir ('/var/lib/jenkins/workspace/hainew'){
-            //my_id = sh(script:"head -1 Instance_Id", returnStdout: true)
-            //echo "${my_id}"
-            //}
-            //echo "${my_id}"
-            
-                       
-        
-           //}
-               
+
                 }
         }         
-        
-   
-       
+  
         }
 }
