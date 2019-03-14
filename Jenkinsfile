@@ -40,7 +40,6 @@ pipeline {
                //echo "$var"
               /// sh 'echo $var'
          def output = sh returnStdout: true, script: 'ls -l'
-         println output      
               
               //echo "${InstanceId}"
                
