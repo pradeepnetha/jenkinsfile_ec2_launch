@@ -47,6 +47,8 @@ pipeline {
                //echo "${ ami_id }"
                //echo "${key_name}"
                
+            slackSend message: 'build is success sh \'echo $var\'', tokenCredentialId: 'slack-jenkins'
+            
             }
 //          withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws-access', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
    // some block
@@ -55,7 +57,6 @@ pipeline {
 
         }         
            }
-        slackSend message: 'build is success sh \'echo $var\'', tokenCredentialId: 'slack-jenkins'
-        
+       
         }
 }
