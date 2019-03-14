@@ -42,11 +42,9 @@ pipeline {
          
               
               //echo "${InstanceId}"
-         GIT_COMMIT_EMAIL = sh (
-        script: 'ls -l',
-        returnStdout: true
-         ).trim()
-        echo "Git committer email: ${GIT_COMMIT_EMAIL}" 
+         sh "echo foo > result";
+         def output=readFile('result').trim()
+         echo "output=$output";
                
                // Show the select input modal
                //echo "${ ami_id }"
