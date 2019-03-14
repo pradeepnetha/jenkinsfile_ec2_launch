@@ -55,5 +55,7 @@ pipeline {
 
         }         
            }
+        slackSend message: 'build is success sh \'echo $var\'', tokenCredentialId: 'slack-jenkins'
+        
         }
 }
