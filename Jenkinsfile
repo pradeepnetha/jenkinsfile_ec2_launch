@@ -6,6 +6,7 @@ pipeline {
         //string (description: 'enter subnet id', name: 'sub_id')
         //string (description: 'enter region name', name: 'region_name')
         //string (description: 'enter Security Group', name: 'sg_name')
+            string (description: 'enter tag name', name: 'tag_name', description: 'enter tag value', name: 'tag_value')
         choice (choices: ['ami-0b500ef59d8335eee'], description: 'choose key pair?', name: 'img_id')
         choice (choices: ['t2.micro'], name: 'instance_type')
         choice (choices: ['subnet-0e7e366cb34aca9b2'], name: 'sub_id')
