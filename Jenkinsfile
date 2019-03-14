@@ -42,7 +42,11 @@ pipeline {
          
               
               //echo "${InstanceId}"
-            echo "There are ${env.COMMITS_ON_MASTER} commits on master"   
+         GIT_COMMIT_EMAIL = sh (
+        script: 'ls -l',
+        returnStdout: true
+         ).trim()
+        echo "Git committer email: ${GIT_COMMIT_EMAIL}" 
                
                // Show the select input modal
                //echo "${ ami_id }"
