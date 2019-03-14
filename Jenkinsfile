@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        COMMITS_ON_MASTER = ( sh (script: 'aws ec2 describe-instances --filters "Name=tag:Name,Values=Web3" --region us-east-2 > instance)',
+        COMMITS_ON_MASTER = (sh(script: 'aws ec2 describe-instances --filters "Name=tag:Name,Values=Web3" --region us-east-2 > instance)',
         sh(script: 'grep InstanceId instance > instance1'), sh(script: 'var=$( cat instance1 )', returnStdout: true).trim()
     }
         parameters {
