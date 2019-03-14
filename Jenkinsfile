@@ -35,24 +35,12 @@ pipeline {
           sh ' grep InstanceId instance > instance1 '
           sh([script: 'grep InstanceId instance > instance1'])
           sh([script: 'var=$( cat instance1 )'])
- //============================================================              
-               BUILD_FULL = sh (
-    aws ec2 run-instances --image-id $img_id --count 1 --instance-type $instance_type --key-name $key_name --security-group-ids $sg_name --subnet-id $sub_id --region us-east-2 > information.txt
-               
-    grep InstanceId information.txt | tr -d '", ":' > Instance_Id
-    sed -i 's/InstanceId//g' Instance_Id
-    Insta_Id=$( cat Instance_Id )
-    echo $Insta_Id,
-                   
-    //script: "git log -1 --pretty=%B | grep '\\[jenkins-full]'",
-    returnStatus: true
-) == 0
-echo "Build full flag: ${BUILD_FULL}"
-//  ====================================================             
+              
            //sh "echo $var"
                //echo "$var"
               /// sh 'echo $var'
-                                
+         def output = sh returnStdout: true, script: 'ls -l'
+         println output      
               
               //echo "${InstanceId}"
                
