@@ -37,7 +37,7 @@ pipeline {
           //sh([script: 'var=$( cat instance1 )'])
           
          // slackSend baseUrl: 'https://opstree.slack.com/services/hooks/jenkins-ci/', channel: 'testjenkins', color: '#439FE0', message: 'build info', teamDomain: 'opstree', tokenCredentialId: 'slack-jenkins'     
-          //slackSend message: 'build is success', tokenCredentialId: 'slack-jenkins'
+          slackSend message: 'build is success', tokenCredentialId: 'slack-jenkins'
                          
             }
 
